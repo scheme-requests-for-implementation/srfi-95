@@ -36,6 +36,8 @@ the list.  You can access previous messages via
 <LI>Revised: <A href="https://srfi.schemers.org/srfi-95/srfi-95-1.1.html">2006-11-06</A></LI>
 <LI>Revised: <A href="https://srfi.schemers.org/srfi-95/srfi-95-1.2.html">2006-11-23</A></LI>
 <LI>Final: <A href="https://srfi.schemers.org/srfi-95/srfi-95-1.3.html">2007-01-29</A></LI>
+<LI>Revised to fix errata:
+  <UL><LI>2020-03-07 (Fix bug in sample implementation.)</LI></UL></LI>
 </UL>
 
 <h1>Abstract</h1>
@@ -279,7 +281,7 @@ implementations with arrays as implemented by
 			  (last (key (array-ref seq dimax))))
 		 (or (negative? idx)
 		     (let ((nxt (key (array-ref seq idx))))
-		       (and (less? nxt last)
+                       (and (not (less? last nxt))
 			    (loop (+ -1 idx) nxt))))))))
 	((null? (cdr seq)) #t)
 	(else
