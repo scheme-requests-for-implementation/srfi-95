@@ -6,6 +6,8 @@
 
 keywords: [[https://srfi.schemers.org/?keywords=algorithm][Algorithm]]
 
+library-name: sorting-and-merging
+
 This repository hosts [[https://srfi.schemers.org/srfi-95/][SRFI 95]]: Sorting and Merging, a [[https://srfi.schemers.org/][Scheme Request for Implementation]].
 
 This SRFI is in /final/ status.
